@@ -145,6 +145,42 @@ const bool CreateGLWindow(const char* p_title, const int p_width, const int p_he
 	return true;
 }
 
+void DrawGlPyramid(GLvoid)
+{
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	//glLoadIdentity();
+	//glTranslatef(-1.5f, 0.0f, -6.0f);
+	glTranslatef(0.0f, 0.0f, -7.0f);
+	glRotatef(fRotate, 1.0f, 1.0f, 1.0f);
+	glBegin(GL_TRIANGLES);
+	glColor3f(1.0f, 0.0f, 0.0f);
+	glVertex3f(0.0f, 1.0f, 0.0f);
+	glColor3f(0.0f, 1.0f, 0.0f);
+	glVertex3f(-1.0f, -1.0f, 1.0f);
+	glColor3f(0.0f, 0.0f, 1.0f);
+	glVertex3f(1.0f, -1.0f, 1.0f);
+	glColor3f(1.0f, 0.0f, 0.0f);
+	glVertex3f(0.0f, 1.0f, 0.0f);
+	glColor3f(0.0f, 0.0f, 1.0f);
+	glVertex3f(1.0f, -1.0f, 1.0f);
+	glColor3f(0.0f, 1.0f, 0.0f);
+	glVertex3f(1.0f, -1.0f, -1.0f);
+	glColor3f(1.0f, 0.0f, 0.0f);
+	glVertex3f(0.0f, 1.0f, 0.0f);
+	glColor3f(0.0f, 1.0f, 0.0f);
+	glVertex3f(1.0f, -1.0f, -1.0f);
+	glColor3f(0.0f, 0.0f, 1.0f);
+	glVertex3f(-1.0f, -1.0f, -1.0f);
+	glColor3f(1.0f, 0.0f, 0.0f);
+	glVertex3f(0.0f, 1.0f, 0.0f);
+	glColor3f(0.0f, 0.0f, 1.0f);
+	glVertex3f(-1.0f, -1.0f, -1.0f);
+	glColor3f(0.0f, 1.0f, 0.0f);
+	glVertex3f(-1.0f, -1.0f, 1.0f);
+	glEnd();
+	fRotate -= 0.05f;
+}
+
 void DrawCube()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -183,7 +219,8 @@ void Render()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	DrawCube();
+	//DrawCube();
+	DrawGlPyramid();
 	SwapBuffers(hDC);
 }
 void EndGame()

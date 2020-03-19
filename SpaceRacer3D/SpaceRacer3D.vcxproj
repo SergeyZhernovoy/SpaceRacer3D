@@ -140,7 +140,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="LoadObj.cpp" />
     <ClCompile Include="SpaceRacer3D.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LoadObj.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
